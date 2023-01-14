@@ -1,0 +1,9 @@
+<h1>Here is our cat show page!</h1>
+
+<a href="<%= edit_cat_url(@cat) %>">Edit cat</a>
+
+<%= render 'cat', cat: @cat, action: :show %>
+
+<form action="<%= cat_url(@cat) %>" method="DELETE">
+    <input type="submit" value="Delete Cat">
+</form>

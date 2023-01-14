@@ -1,0 +1,53 @@
+<% if action == :new %>
+<%#  if we are doing a new form, should send us to create %>
+    <% action_url = cats_url %>
+    <% button_text = "Create Kitty" %>
+<form action = "<%= action_url %>" method="POST">
+<% else %>
+<%# we are an edit form %>
+    <% action_url = cat_url(cat) %>
+    <% button_text = "Update Kitty" %>
+<form action = "<%= action_url %>" method="PATCH">
+<% end %>
+
+<label> Name:
+    <input type = "text" name = "cat[name]" value ="<%cat.name%>">
+</label>
+
+<br>
+
+<label> Color:
+
+</label>
+
+<label> Birthday:
+    <input type = "text" name = "cat[name]" value ="<%cat.name%>">
+</label>
+
+<br>
+
+<label> Description:
+    <input type = "text" name = "cat[name]" value ="<%cat.name%>">
+</label>
+
+
+<label> Sex:
+    <input type = "radio" id="M" name="cat[sex]" value = "<%cat.sex%>">
+    <label for="M">M</label>
+    
+    <br>
+    
+    <input type="radio" id="F" name="cat[sex]" value="<%cat.sex%>">
+    <label for=""F">F</label>
+    
+    <br>
+
+    <input type = "submit" value="Submit!">
+
+</label>
+
+
+
+
+
+</form>

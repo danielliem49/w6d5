@@ -1,0 +1,20 @@
+
+
+<%# if we are on the show page, give a link to the index page %>
+<% if action == :show  %>
+    <a href="<%= cats_url %>">Index page</a>
+    <h2><%= cat.name %></h2>
+    <% else %>
+<%# otherwise we are on the index, so we should link the user's show page %>
+    <a href="<%= cat_url(cat) %>"><%= cat.name %></a>
+    <% end %>
+    
+    <ul>
+        <li> <%= cat.birth_date %> </li>
+        <li> <%= cat.age %> </li>
+        <li> <%= cat.sex %> </li>
+        <li> <%= cat.color %> </li>
+        <% if cat.description %>
+            <li> <%= cat.description %> </li>
+        <% end %>
+    </ul>
